@@ -1,11 +1,11 @@
+Summary:	A game of action and puzzle solving
 Name:		kgoldrunner
 Version:	4.10.4
 Release:	1
 Epoch:		1
-Summary:	A game of action and puzzle solving
 Group:		Graphical desktop/KDE
 License:	GPLv2 and LGPLv2 and GFDL
-URL:		http://games.kde.org/game.php?game=kgoldrunner
+Url:		http://games.kde.org/game.php?game=kgoldrunner
 Source:		ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	libkdegames-devel
 
