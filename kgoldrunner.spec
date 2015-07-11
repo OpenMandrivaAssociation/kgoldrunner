@@ -8,6 +8,7 @@ License:	GPLv2 and LGPLv2 and GFDL
 Url:		http://games.kde.org/game.php?game=kgoldrunner
 Source0:	http://download.kde.org/stable/applications/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	libkdegames-devel
+BuildRequires:	kdelibs4-devel
 
 %description
 KGoldrunner is an action game where the hero runs through a maze, climbs
@@ -28,10 +29,10 @@ still, they are after you!.
 
 %prep
 %setup -q
-%cmake_kde5
 
 %build
-%ninja -C build
+%cmake_kde4
+%make
 
 %install
-%ninja_install -C build
+%makeinstall_std -C build
