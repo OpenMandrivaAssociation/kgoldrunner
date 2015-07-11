@@ -9,6 +9,7 @@ Url:		http://games.kde.org/game.php?game=kgoldrunner
 Source0:	http://download.kde.org/stable/applications/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	libkdegames-devel
 BuildRequires:	kdelibs4-devel
+BuildRequires:	cmake(KDEGames)
 
 %description
 KGoldrunner is an action game where the hero runs through a maze, climbs
