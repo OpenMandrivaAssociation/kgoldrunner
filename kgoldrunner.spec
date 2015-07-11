@@ -28,11 +28,10 @@ still, they are after you!.
 
 %prep
 %setup -q
+%cmake_kde5
 
 %build
-%cmake_kde4
-%make
+%ninja -C build
 
 %install
-%makeinstall_std -C build
-
+%ninja_install -C build
