@@ -19,12 +19,10 @@ still, they are after you!.
 
 %files
 %{_bindir}/%{name}
-%{_datadir}/applications/KGoldrunner.desktop
-%{_sysconfdir}/xdg/%{name}.knsrc
-%{_datadir}/%{name}
+%{_datadir}/applications/kde4/KGoldrunner.desktop
 %doc %{_docdir}/*/*/%{name}
 %{_iconsdir}/hicolor/*/apps/%{name}.png
-%{_datadir}/%{name}/kgoldrunnerui.rc
+%{_datadir}/apps/%{name}/kgoldrunnerui.rc
 
 #------------------------------------------------------------------------------
 
