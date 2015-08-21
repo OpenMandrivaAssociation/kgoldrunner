@@ -1,7 +1,7 @@
 Summary:	A game of action and puzzle solving
 Name:		kgoldrunner
-Version:	15.04.3
-Release:	2
+Version:	15.08.0
+Release:	1
 Epoch:		1
 Group:		Graphical desktop/KDE
 License:	GPLv2 and LGPLv2 and GFDL
@@ -20,9 +20,10 @@ still, they are after you!.
 %files
 %{_bindir}/%{name}
 %{_datadir}/applications/kde4/KGoldrunner.desktop
-%doc %{_docdir}/*/*/%{name}
+%{_datadir}/apps/kgoldrunner
 %{_iconsdir}/hicolor/*/apps/%{name}.png
-%{_datadir}/apps/%{name}/kgoldrunnerui.rc
+%{_datadir}/config/kgoldrunner.knsrc
+%doc %{_docdir}/*/*/%{name}
 
 #------------------------------------------------------------------------------
 
