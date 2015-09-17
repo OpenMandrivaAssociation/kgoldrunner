@@ -29,6 +29,7 @@ still, they are after you!.
 
 %prep
 %setup -q
+sed -i '1s/^/cmake_minimum_required(VERSION 3.1)\n/' CMakeLists.txt
 
 %build
 %cmake_kde4
