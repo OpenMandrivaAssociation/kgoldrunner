@@ -1,6 +1,6 @@
 Summary:	A game of action and puzzle solving
 Name:		kgoldrunner
-Version:	17.04.0
+Version:	17.04.1
 Release:	1
 Epoch:		1
 Group:		Graphical desktop/KDE
