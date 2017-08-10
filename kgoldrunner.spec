@@ -1,6 +1,6 @@
 Summary:	A game of action and puzzle solving
 Name:		kgoldrunner
-Version:	17.04.2
+Version:	17.07.90
 Release:	1
 Epoch:		1
 Group:		Graphical desktop/KDE
@@ -8,9 +8,22 @@ License:	GPLv2 and LGPLv2 and GFDL
 Url:		http://games.kde.org/game.php?game=kgoldrunner
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 Source0:	http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
-BuildRequires:	libkdegames-devel
-BuildRequires:	kdelibs4-devel
-BuildRequires:	cmake(KDEGames)
+BuildRequires:	cmake(ECM)
+BuildRequires:	cmake
+BuildRequires:	cmake(KF5Config)
+BuildRequires:	cmake(KF5ConfigWidgets)
+BuildRequires:	cmake(KF5CoreAddons)
+BuildRequires:	cmake(KF5Crash)
+BuildRequires:	cmake(KF5DBusAddons)
+BuildRequires:	cmake(KF5I18n)
+BuildRequires:	cmake(KF5KDEGames)
+BuildRequires:	cmake(KF5KIO)
+BuildRequires:	cmake(KF5WidgetsAddons)
+BuildRequires:	cmake(KF5XmlGui)
+BuildRequires:	cmake(Qt5Core)
+BuildRequires:	cmake(Qt5Gui)
+BuildRequires:	cmake(Qt5Widgets)
+BuildRequires:	ninja
 
 %description
 KGoldrunner is an action game where the hero runs through a maze, climbs
@@ -18,23 +31,24 @@ stairs, dig holes and dodges enemies in order to collect all the gold nuggets
 and escape to the next level. Your enemies are also after the gold. Worse
 still, they are after you!.
 
-%files
+%files -f %{name}.lang
 %{_bindir}/%{name}
-%{_datadir}/applications/kde4/KGoldrunner.desktop
-%{_datadir}/apps/kgoldrunner
+%{_datadir}/%{name}
 %{_iconsdir}/hicolor/*/apps/%{name}.png
-%{_datadir}/config/kgoldrunner.knsrc
-%doc %{_docdir}/*/*/%{name}
+%{_sysconfdir}/xdg/%{name}.knsrc
+%{_datadir}/applications/*.desktop
+%{_datadir}/kxmlgui5/%{name}
+%{_datadir}/metainfo/*.xml
 
 #------------------------------------------------------------------------------
 
 %prep
 %setup -q
-sed -i '1s/^/cmake_minimum_required(VERSION 3.1)\n/' CMakeLists.txt
 
 %build
-%cmake_kde4
-%make
+%cmake_kde5 -G Ninja
+ninja
 
 %install
-%makeinstall_std -C build
+DESTDIR="%{buildroot}" ninja install -C build
+%find_lang %{name} --all-name --with-html
