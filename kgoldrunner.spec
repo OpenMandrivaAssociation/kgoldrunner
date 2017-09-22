@@ -25,6 +25,7 @@ BuildRequires:	cmake(Qt5Core)
 BuildRequires:	cmake(Qt5Gui)
 BuildRequires:	cmake(Qt5Widgets)
 BuildRequires:	cmake(Qt5Test)
+BuildRequires:	cmake(Phonon4Qt5)
 BuildRequires:	ninja
 
 %description
