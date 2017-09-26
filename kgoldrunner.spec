@@ -9,7 +9,6 @@ Url:		http://games.kde.org/game.php?game=kgoldrunner
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 Source0:	http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	cmake(ECM)
-BuildRequires:	cmake
 BuildRequires:	cmake(KF5Config)
 BuildRequires:	cmake(KF5ConfigWidgets)
 BuildRequires:	cmake(KF5CoreAddons)
@@ -26,7 +25,6 @@ BuildRequires:	cmake(Qt5Gui)
 BuildRequires:	cmake(Qt5Widgets)
 BuildRequires:	cmake(Qt5Test)
 BuildRequires:	cmake(Phonon4Qt5)
-BuildRequires:	ninja
 
 %description
 KGoldrunner is an action game where the hero runs through a maze, climbs
@@ -50,8 +48,8 @@ still, they are after you!.
 
 %build
 %cmake_kde5 -G Ninja
-ninja
+%ninja -C build
 
 %install
-DESTDIR="%{buildroot}" ninja install -C build
+%ninja_install -C build
 %find_lang %{name} --all-name --with-html
