@@ -48,7 +48,7 @@ still, they are after you!.
 
 %build
 %cmake_kde5 -G Ninja
-%ninja -C build
+%ninja
 
 %install
 %ninja_install -C build
