@@ -1,6 +1,6 @@
 Summary:	A game of action and puzzle solving
 Name:		kgoldrunner
-Version:	 18.08.3
+Version:	 18.11.80
 Release:	1
 Epoch:		1
 Group:		Graphical desktop/KDE
@@ -37,6 +37,7 @@ and escape to the next level. Your enemies are also after the gold. Worse
 still, they are after you!.
 
 %files -f %{name}.lang
+%{_sysconfdir}/xdg/kgoldrunner.categories
 %{_bindir}/%{name}
 %{_datadir}/%{name}
 %{_iconsdir}/hicolor/*/apps/%{name}.png
