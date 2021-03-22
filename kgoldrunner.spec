@@ -1,6 +1,6 @@
 Summary:	A game of action and puzzle solving
 Name:		kgoldrunner
-Version:	20.12.3
+Version:	21.03.80
 Release:	1
 Epoch:		1
 Group:		Graphical desktop/KDE
@@ -43,7 +43,6 @@ still, they are after you!.
 %{_iconsdir}/hicolor/*/apps/%{name}.png
 %{_datadir}/knsrcfiles/%{name}.knsrc
 %{_datadir}/applications/*.desktop
-%{_datadir}/kxmlgui5/%{name}
 %{_datadir}/metainfo/*.xml
 
 #------------------------------------------------------------------------------
