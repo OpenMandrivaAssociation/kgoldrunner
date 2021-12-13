@@ -1,6 +1,6 @@
 Summary:	A game of action and puzzle solving
 Name:		kgoldrunner
-Version:	21.08.3
+Version:	21.12.0
 Release:	1
 Epoch:		1
 Group:		Graphical desktop/KDE
