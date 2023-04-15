@@ -1,7 +1,7 @@
 Summary:	A game of action and puzzle solving
 Name:		kgoldrunner
-Version:	22.12.3
-Release:	2
+Version:	23.03.90
+Release:	1
 Epoch:		1
 Group:		Graphical desktop/KDE
 License:	GPLv2 and LGPLv2 and GFDL
