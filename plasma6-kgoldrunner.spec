@@ -1,7 +1,7 @@
 Summary:	A game of action and puzzle solving
 Name:		plasma6-kgoldrunner
-Version:	24.01.90
-Release:	2
+Version:	24.01.95
+Release:	1
 Group:		Graphical desktop/KDE
 License:	GPLv2 and LGPLv2 and GFDL
 Url:		http://games.kde.org/game.php?game=kgoldrunner
