@@ -1,12 +1,19 @@
+%define git 20240218
+%define gitbranch release/24.02
+%define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 Summary:	A game of action and puzzle solving
 Name:		plasma6-kgoldrunner
-Version:	24.01.95
-Release:	1
+Version:	24.01.96
+Release:	%{?git:0.%{git}.}1
 Group:		Graphical desktop/KDE
 License:	GPLv2 and LGPLv2 and GFDL
 Url:		http://games.kde.org/game.php?game=kgoldrunner
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
+%if 0%{?git:1}
+Source0:	https://invent.kde.org/games/kgoldrunner/-/archive/%{gitbranch}/kgoldrunner-%{gitbranchd}.tar.bz2#/kgoldrunner-%{git}.tar.bz2
+%else
 Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/kgoldrunner-%{version}.tar.xz
+%endif
 BuildRequires:	cmake(Qt6Widgets)
 BuildRequires:	cmake(Qt6Core)
 BuildRequires:	cmake(Qt6Gui)
@@ -47,7 +54,7 @@ still, they are after you!.
 #------------------------------------------------------------------------------
 
 %prep
-%autosetup -p1 -n kgoldrunner-%{?git:master}%{!?git:%{version}}
+%autosetup -p1 -n kgoldrunner-%{?git:%{gitbranchd}}%{!?git:%{version}}
 
 %build
 %cmake \
