@@ -3,7 +3,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 Summary:	A game of action and puzzle solving
 Name:		plasma6-kgoldrunner
-Version:	24.05.2
+Version:	24.08.0
 Release:	%{?git:0.%{git}.}1
 Group:		Graphical desktop/KDE
 License:	GPLv2 and LGPLv2 and GFDL
@@ -44,6 +44,7 @@ still, they are after you!.
 
 %files -f kgoldrunner.lang
 %{_datadir}/qlogging-categories6/kgoldrunner.categories
+%{_datadir}/qlogging-categories6/kgoldrunner.renamecategories
 %{_bindir}/kgoldrunner
 %{_datadir}/kgoldrunner
 %{_iconsdir}/hicolor/*/apps/kgoldrunner.png
