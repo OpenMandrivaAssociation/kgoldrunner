@@ -7,7 +7,7 @@ Version:	24.08.2
 Release:	%{?git:0.%{git}.}1
 Group:		Graphical desktop/KDE
 License:	GPLv2 and LGPLv2 and GFDL
-Url:		http://games.kde.org/game.php?game=kgoldrunner
+Url:		https://games.kde.org/game.php?game=kgoldrunner
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/games/kgoldrunner/-/archive/%{gitbranch}/kgoldrunner-%{gitbranchd}.tar.bz2#/kgoldrunner-%{git}.tar.bz2
