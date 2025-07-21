@@ -3,7 +3,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 Summary:	A game of action and puzzle solving
 Name:		kgoldrunner
-Version:	25.04.0
+Version:	25.04.3
 Release:	%{?git:0.%{git}.}1
 Group:		Graphical desktop/KDE
 License:	GPLv2 and LGPLv2 and GFDL
@@ -36,13 +36,18 @@ BuildRequires:	cmake(KF6XmlGui)
 BuildRequires:	cmake(KDEGames6)
 BuildRequires:	cmake(Phonon4Qt6)
 
+%rename plasma6-kgoldrunner
+
+BuildSystem:	cmake
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+
 %description
 KGoldrunner is an action game where the hero runs through a maze, climbs
 stairs, dig holes and dodges enemies in order to collect all the gold nuggets
 and escape to the next level. Your enemies are also after the gold. Worse
 still, they are after you!.
 
-%files -f kgoldrunner.lang
+%files -f %{name}.lang
 %{_datadir}/qlogging-categories6/kgoldrunner.categories
 %{_datadir}/qlogging-categories6/kgoldrunner.renamecategories
 %{_bindir}/kgoldrunner
@@ -51,18 +56,3 @@ still, they are after you!.
 %{_datadir}/knsrcfiles/kgoldrunner.knsrc
 %{_datadir}/applications/*.desktop
 %{_datadir}/metainfo/*.xml
-
-#------------------------------------------------------------------------------
-
-%prep
-%autosetup -p1 -n kgoldrunner-%{?git:%{gitbranchd}}%{!?git:%{version}}
-
-%build
-%cmake \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja -G Ninja
-%ninja
-
-%install
-%ninja_install -C build
-%find_lang kgoldrunner --all-name --with-html
